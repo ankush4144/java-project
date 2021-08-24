@@ -1,13 +1,11 @@
-FROM maven:3.8.2-openjdk-11
+# Using openjdk image to run .jar file 
+FROM openjdk:8-jdk-slim
 
-RUN mkdir /java-project
+# copying jar from target directory to container
+COPY target/*.jar /tmp/my-app.jar
 
-COPY src /java-project/src
-COPY pom.xml /java-project
+# Setting work directory
+WORKDIR /tmp
 
-WORKDIR /java-project
-
-RUN mvn clean install
-
-CMD ["java", "-jar", "/java-project/target/my-app-1.0.jar"]
-
+# Setting up command to run while running container
+CMD ["java", "-jar", "app.jar"]
