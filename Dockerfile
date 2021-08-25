@@ -8,4 +8,4 @@ COPY target/*.jar /tmp/my-app.jar
 WORKDIR /tmp
 
 # Setting up command to run while running container
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "my-app.jar"]
