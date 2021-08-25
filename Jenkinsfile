@@ -1,5 +1,3 @@
-def quote = ''
-
 pipeline {
     agent {
         label 'CENTOS_SLAVE'
@@ -41,7 +39,7 @@ pipeline {
         stage('Cleanup') {
             steps {       
                 echo "Removing all containers as they are no longer required"
-                sudo docker rm `sudo docker ps -q -a`
+                sh 'sudo docker rm `sudo docker ps -q -a`'
             }
         }
     }
