@@ -54,4 +54,8 @@ pipeline {
             }
         }
     }
+    post {
+        always{
+            cleanWorkspace()
+    }
 }
