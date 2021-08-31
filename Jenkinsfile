@@ -17,7 +17,7 @@ pipeline {
             agent{
                   docker {
                         image 'maven:3.8.2-openjdk-11'
-                        args '-v $WORKSPACE:/shared-volume -u root'
+                        args '-v $WORKSPACE/java_app:/shared-volume -u root'
                         label 'CENTOS_SLAVE'
                     }
                 }
