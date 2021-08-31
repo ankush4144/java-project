@@ -26,9 +26,11 @@ pipeline {
             }
             steps {
                 echo "Changing Directory"
-                sh 'cd /shared-volume'
+                sh 'cd /shared-volume/java_app'
                 sh 'ls'
                 echo "Running mvn install on the code"
+                echo 'pwd'
+                echo 'ls'
                 sh 'mvn clean install'
                 echo 'Creating Artifacts..'
                 archiveArtifacts artifacts: 'target/*.jar'
