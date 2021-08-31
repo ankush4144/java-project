@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'master'
+        label 'CENTOS_SLAVE'
     }
     
     stages {
@@ -18,7 +18,7 @@ pipeline {
                   docker {
                         image 'maven:3.8.2-openjdk-11'
                         args '-v $WORKSPACE:/shared-volume -u root'
-                        label 'master'
+                        label 'CENTOS_SLAVE'
                     }
                 }
             options {
