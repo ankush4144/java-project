@@ -16,7 +16,7 @@ pipeline {
             
             agent{
                   docker {
-                        image 'maven:jdk-11.0.7'
+                        image 'maven:3.8.2-openjdk-11'
                         args '-v $WORKSPACE:/shared-volume -u root'
                     }
                 }
