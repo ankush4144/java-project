@@ -23,7 +23,7 @@ pipeline {
                 }
             steps {
                 echo "Changing Directory"
-                sh 'cd /shared-volume/java_app'
+                sh 'cd /shared-volume'
                 sh 'ls'
                 echo "Running mvn install on the code"
                 echo 'pwd'
