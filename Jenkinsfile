@@ -21,9 +21,6 @@ pipeline {
                         label 'CENTOS_SLAVE'
                     }
                 }
-            options {
-                skipDefaultCheckout()
-            }
             steps {
                 echo "Changing Directory"
                 sh 'cd /shared-volume/java_app'
