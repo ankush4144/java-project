@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'master'
+        label 'CENTOS_SLAVE'
     }
     
     stages {
@@ -26,7 +26,6 @@ pipeline {
                 echo "Running mvn install on the code"
                 sh 'mvn clean install'
                 echo "Printing structure of current directory"
-                sh 'tree'
                 echo 'Creating Artifacts..'
                 archiveArtifacts artifacts: 'target/*.jar'
             }
