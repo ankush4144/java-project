@@ -17,7 +17,7 @@ pipeline {
             agent{
                   docker {
                         image 'maven:3.8.2-openjdk-11'
-                        args '-v $WORKSPACE/java_app:/shared-volume -u root'
+                        args '-v $WORKSPACE:/shared-volume -u root'
                         label 'CENTOS_SLAVE'
                     }
                 }
@@ -27,6 +27,7 @@ pipeline {
             steps {
                 echo "Changing Directory"
                 sh 'cd /shared-volume'
+                sh 'ls'
                 echo "Running mvn install on the code"
                 sh 'mvn clean install'
                 echo 'Creating Artifacts..'
