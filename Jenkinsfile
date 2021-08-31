@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'CENTOS_SLAVE'
+        label 'master'
     }
     
     stages {
