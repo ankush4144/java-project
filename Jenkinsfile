@@ -20,6 +20,9 @@ pipeline {
                         args '-v $WORKSPACE:/shared-volume -u root'
                     }
                 }
+            options {
+                skipDefaultCheckout()
+            }
             steps {
                 echo "Changing Directory"
                 sh 'cd /shared-volume'
