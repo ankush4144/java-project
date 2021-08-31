@@ -25,7 +25,6 @@ pipeline {
                 sh 'cd /shared-volume'
                 echo "Running mvn install on the code"
                 sh 'mvn clean install'
-                echo "Printing structure of current directory"
                 echo 'Creating Artifacts..'
                 archiveArtifacts artifacts: 'target/*.jar'
             }
