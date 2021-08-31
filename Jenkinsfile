@@ -57,5 +57,6 @@ pipeline {
     post {
         always{
             cleanWorkspace()
+         }
     }
 }
