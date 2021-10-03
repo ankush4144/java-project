@@ -1,0 +1,13 @@
+---
+# tasks file for copy_jar_to_node
+- name: Copy jar file to vagrant node
+  copy:
+    src: "{{ jar_file_path }}"
+    dest: /tmp/my-app.jar
+  register: copy_output
+
+- name: Running jar file
+  shell: java -jar {{copy_output.dest}}
+  register: output
+- debug: msg="{{output.stdout}}"
+

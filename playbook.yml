@@ -1,0 +1,13 @@
+- hosts: localhost
+  tasks:
+    - name: Building Maven Project 
+      shell: mvn install
+
+- hosts: vagrant_node
+  become: yes
+  tasks:
+    - name: Copying jar to node and executing it
+      import_role:
+        name: copy_jar_to_node
+      vars:
+         jar_file_path: target/my-app-1.0.jar
