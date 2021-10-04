@@ -11,3 +11,7 @@
         name: copy_jar_to_node
       vars:
          jar_file_path: target/my-app-1.0.jar
+    - name: Executing jar file
+      import_role:
+        name: execute_jar_file
+

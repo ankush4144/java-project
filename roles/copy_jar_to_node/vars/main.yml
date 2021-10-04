@@ -1,3 +1,2 @@
 ---
 # vars file for copy_jar_to_node
-jar_file_path: /home/vagrant/maven-project/target/my-app-1.0.jar

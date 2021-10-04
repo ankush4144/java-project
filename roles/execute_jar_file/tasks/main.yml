@@ -1,0 +1,6 @@
+---
+# tasks file for execute_jar_file
+- name: Running jar file
+  shell: java -jar "{{ file_path }}"
+  register: output
+- debug: msg="{{output.stdout}}"
